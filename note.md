@@ -11,6 +11,9 @@
     - https://opendata.cwb.gov.tw/dist/opendata-swagger.html
     - https://opendata.cwb.gov.tw/userLogin
     - https://opendata.cwb.gov.tw/dataset/climate?page=1
+    - [各月旅遊人次] https://admin.taiwan.net.tw/FileUploadCategoryListC003330.aspx?CategoryID=2638da16-f46c-429c-81f9-3687523da8eb&appname=FileUploadCategoryListC003330
+    - [臺灣地區平均氣溫、濕度] https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100&funid=a8101
+
 
 # Tool:
     - https://datascienceparichay.com/article/read-csv-files-using-pandas-with-examples/
@@ -18,7 +21,8 @@
 # Timeline:
     - 3/10 19:00-23:30 discuss project plan
     - 3/17 20:00-22:30 environment setting
-    - 3/27 22:00-00:00 plots data directly and analyze 
+    - 3/27 22:00-00:00 plots data directly and analyze
+    - 4/02 21:00-00:10 k-nn done
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
@@ -26,8 +30,7 @@
     - 壓力越大走路步數越多 (步數多無法推論可抒壓)
 
 # next time
-    - 下面分類的圖要拆開畫(3個顏色分開畫)，避免 重複的值 的顏色被吃掉，導致資料遺失 (或直方圖)
-    - k-nn & k-means & other algorithm
+    - other algorithm (監督式學習分類)
 
 # Food
 1. 酸菜白肉 VS 叻沙
