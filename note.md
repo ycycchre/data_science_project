@@ -23,6 +23,7 @@
     - 3/17 20:00-22:30 environment setting
     - 3/27 22:00-00:00 plots data directly and analyze
     - 4/02 21:00-00:10 k-nn done
+    - 4/07 19:30-22:30 midterm report
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
@@ -30,7 +31,9 @@
     - 壓力越大走路步數越多 (步數多無法推論可抒壓)
 
 # next time
-    - other algorithm (監督式學習分類)
+    - correlation coefficient
+    - SVM
+    - Decision Tree
 
 # Food
 1. 酸菜白肉 VS 叻沙
