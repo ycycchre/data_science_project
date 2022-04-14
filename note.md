@@ -24,6 +24,10 @@
     - 3/27 22:00-00:00 plots data directly and analyze
     - 4/02 21:00-00:10 k-nn done
     - 4/07 19:30-22:30 midterm report
+    - 4/13 23:00-02:00 read papers
+    - 4/14 11:00-13:30 write introduction
+    - 4/14 18:00-19:00 draw timeline
+    - 4/14 21:30-00:00 midterm report and presentation practice
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
