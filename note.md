@@ -1,4 +1,4 @@
-# Group Name: stress forever
+g# Group Name: stress forever
 # Member: 110599002、109598113
 # Project Name: The relationship between weather and human stress
 
@@ -21,7 +21,7 @@
 # Timeline:
     - 3/10 19:00-23:30 discuss project plan
     - 3/17 20:00-22:30 environment setting
-    - 3/27 22:00-00:00 plots data directly and analyze
+    - 3/27 22:00-00:00 plots data directly and analyze(linear analysis)
     - 4/02 21:00-00:10 k-nn done
     - 4/07 19:30-22:30 midterm report
     - 4/13 23:00-02:00 read papers
