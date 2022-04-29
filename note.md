@@ -34,6 +34,8 @@ g# Group Name: stress forever
     - 4/14 11:00-13:30 write introduction
     - 4/14 18:00-19:00 draw timeline
     - 4/14 21:30-00:00 midterm report and presentation practice
+    - 4/29 10:00-11:50 correlation coefficient and part of SVM
+    - 4/29 19:00-01:10 SVM, Decision Tree, Transfer all code to python
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
@@ -41,9 +43,12 @@ g# Group Name: stress forever
     - 壓力越大走路步數越多 (步數多無法推論可抒壓)
 
 # next time
-    - correlation coefficient
-    - SVM
-    - Decision Tree
+    - 需要找放鬆活動的排行資料，可以是資料形式或是相關研究結果，資料較佳，可做分析
+    - 整理台灣一年度溫濕度資料(2021, 2020, 2019)
+    - 做預測介面(python GUI)
+
+![UI_prototype](./UI_prototype.jpeg)
+    
 
 # Food
 1. 酸菜白肉 VS 叻沙
