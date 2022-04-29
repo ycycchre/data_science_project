@@ -13,6 +13,12 @@ g# Group Name: stress forever
     - https://opendata.cwb.gov.tw/dataset/climate?page=1
     - [各月旅遊人次] https://admin.taiwan.net.tw/FileUploadCategoryListC003330.aspx?CategoryID=2638da16-f46c-429c-81f9-3687523da8eb&appname=FileUploadCategoryListC003330
     - [臺灣地區平均氣溫、濕度] https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100&funid=a8101
+    - [SVC model=linear vs linearSVC]https://blog.csdn.net/qq_23069955/article/details/80961186
+    - [SVC model=linear vs linearSVC]https://blog.csdn.net/qq_39537898/article/details/121883511
+    - [SVM model=rbf]https://ithelp.ithome.com.tw/articles/10201279
+    - [AdaBoostClaasifier]https://www.796t.com/content/1549060055.html
+
+
 
 
 # Tool:
