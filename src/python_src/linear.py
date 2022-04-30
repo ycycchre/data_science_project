@@ -16,8 +16,6 @@ class LinearAnaiysis:
 
         self.stress_level_classifier_data = [lysis_data[self.str_lev_data == 0], lysis_data[self.str_lev_data == 1], lysis_data[self.str_lev_data == 2]]
 
-        self.linear_data_x = [self.humi_data, self.temp_data, self.step_data, self.humi_data, self.temp_data, self.temp_data]
-        self.linear_data_y = [self.str_lev_data, self.str_lev_data, self.str_lev_data, self.step_data, self.step_data, self.humi_data]
         self.linear_name_x = ['Humidity', 'Temperature', 'Step count', 'Humidity', 'Temperature', 'Temperature']
         self.linear_name_y = ['Stress Level', 'Stress Level', 'Stress Level', 'Step count', 'Step count', 'Humidity']
 
@@ -52,9 +50,13 @@ class LinearAnaiysis:
         fig, axs = plt.subplots(2, 3)
 
         for i in range(6):
-            correlation = self.linear_data_x[i].corr(self.linear_data_y[i])
+            linear_data_x = self.get_data_by_name(self.linear_name_x[i])
+            linear_data_y = self.get_data_by_name(self.linear_name_y[i])
+            
+            correlation = linear_data_x.corr(linear_data_y)
             print("correlation coefficient between", self.linear_name_x[i], "and", self.linear_name_y[i], "is", correlation)
-            axs[plot_column, plot_row].scatter(self.linear_data_x[i], self.linear_data_y[i], alpha=0.8)
+
+            axs[plot_column, plot_row].scatter(linear_data_x, linear_data_y, alpha=0.8)
             axs[plot_column, plot_row].set(xlabel=self.linear_name_x[i], ylabel=self.linear_name_y[i])
             axs[plot_column, plot_row].set_title("Correlation = {}".format(correlation))
             if (plot_row == 2):
@@ -139,6 +141,7 @@ class LinearAnaiysis:
             axs[plot_column, plot_row].scatter(stress_2.iloc[:, x_num], stress_2.iloc[:, y_num], c="yellow", marker='+', label='Stress Level 2')
 
             axs[plot_column, plot_row].set(xlabel=linear_name_x[i], ylabel=linear_name_y[i])
+            axs[plot_column, plot_row].set_title("Stress Level 0 ~ 2")
             plot_row += 1
             num = 0
 
@@ -146,6 +149,7 @@ class LinearAnaiysis:
                 label_name = "Stress Level" + str(num)
                 axs[plot_column, plot_row].scatter(stress_level.iloc[:, x_num], stress_level.iloc[:, y_num], c=color[num], marker=marker[num], label=label_name)
                 axs[plot_column, plot_row].set(xlabel=linear_name_x[i], ylabel=linear_name_y[i])
+                axs[plot_column, plot_row].set_title("Stress Level {}".format(num))
 
                 num += 1
                 plot_row += 1

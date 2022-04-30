@@ -29,20 +29,20 @@ if __name__ == '__main__':
     DecisionTreeModel = DecisionTreeModel()
 
     predicted = DecisionTreeModel.decision_tree_prediction(DecisionTreeModel.ver_data) # 0:Overcast, 2:Mild
-    average_acc_train = accuracy_score(DecisionTreeModel.ver_label, predicted)
+    acc_train = accuracy_score(DecisionTreeModel.ver_label, predicted)
 
     predicted = DecisionTreeModel.decision_tree_prediction(DecisionTreeModel.test_data)
-    average_acc_test = accuracy_score(DecisionTreeModel.test_label, predicted)
+    acc_test = accuracy_score(DecisionTreeModel.test_label, predicted)
 
-    print("Decision Tree Verification Average Accuracy: {} \nDecision Tree Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("Decision Tree Verification Accuracy: {} \nDecision Tree Test Accuracy: {}".format(acc_train, acc_test))
 
     predicted = DecisionTreeModel.adaboost_prediction(DecisionTreeModel.ver_data) # 0:Overcast, 2:Mild
-    average_acc_train = accuracy_score(DecisionTreeModel.ver_label, predicted)
+    acc_train = accuracy_score(DecisionTreeModel.ver_label, predicted)
 
     predicted = DecisionTreeModel.adaboost_prediction(DecisionTreeModel.test_data)
-    average_acc_test = accuracy_score(DecisionTreeModel.test_label, predicted)
+    acc_test = accuracy_score(DecisionTreeModel.test_label, predicted)
 
 
-    print("Adaboost Verification Average Accuracy: {} \nAdaboost Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("Adaboost Verification Accuracy: {} \nAdaboost Test Accuracy: {}".format(acc_train, acc_test))
 
     

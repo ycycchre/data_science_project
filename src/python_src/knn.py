@@ -24,11 +24,11 @@ if __name__ == '__main__':
     KNNModel = KNNModel()
     
     predicted = KNNModel.knn_prediction(KNNModel.ver_data) # 0:Overcast, 2:Mild
-    average_acc_train = accuracy_score(KNNModel.ver_label, predicted)
+    acc_train = accuracy_score(KNNModel.ver_label, predicted)
 
     predicted = KNNModel.knn_prediction(KNNModel.test_data)
-    average_acc_test = accuracy_score(KNNModel.test_label, predicted)
+    acc_test = accuracy_score(KNNModel.test_label, predicted)
 
-    print("KNN Verification Average Accuracy: {} \nKNN Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("KNN Verification Accuracy: {} \nKNN Test Accuracy: {}".format(acc_train, acc_test))
 
     

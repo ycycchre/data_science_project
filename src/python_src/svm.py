@@ -36,36 +36,36 @@ if __name__ == '__main__':
     SVMModel = SVMModel()
 
     pred_ver = SVMModel.svc_prdiction(SVMModel.ver_data)
-    average_acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
+    acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
 
     pred_test = SVMModel.svc_prdiction(SVMModel.test_data)
-    average_acc_test = accuracy_score(SVMModel.test_label, pred_test)
+    acc_test = accuracy_score(SVMModel.test_label, pred_test)
 
-    print("SVM Verification Average Accuracy: {} \nSVM Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("SVM Verification Accuracy: {} \nSVM Test Accuracy: {}".format(acc_train, acc_test))
 
     pred_ver = SVMModel.rbf_svc_prdiction(SVMModel.ver_data)
-    average_acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
+    acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
 
     pred_test = SVMModel.rbf_svc_prdiction(SVMModel.test_data)
-    average_acc_test = accuracy_score(SVMModel.test_label, pred_test)
+    acc_test = accuracy_score(SVMModel.test_label, pred_test)
 
-    print("SVM RBF Verification Average Accuracy: {} \nSVM RBF Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("SVM RBF Verification Accuracy: {} \nSVM RBF Test Accuracy: {}".format(acc_train, acc_test))
 
     pred_ver = SVMModel.poly_svc_prdiction(SVMModel.ver_data)
-    average_acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
+    acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
 
     pred_test = SVMModel.poly_svc_prdiction(SVMModel.test_data)
-    average_acc_test = accuracy_score(SVMModel.test_label, pred_test)
+    acc_test = accuracy_score(SVMModel.test_label, pred_test)
 
-    print("SVM Poly Verification Average Accuracy: {} \nSVM Poly Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("SVM Poly Verification Accuracy: {} \nSVM Poly Test Accuracy: {}".format(acc_train, acc_test))
 
     pred_ver = SVMModel.lin_svc_prdiction(SVMModel.ver_data)
-    average_acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
+    acc_train = accuracy_score(SVMModel.ver_label, pred_ver)
 
     pred_test = SVMModel.lin_svc_prdiction(SVMModel.test_data)
-    average_acc_test = accuracy_score(SVMModel.test_label, pred_test)
+    acc_test = accuracy_score(SVMModel.test_label, pred_test)
 
-    print("SVM Linear Verification Average Accuracy: {} \nSVM Linear Test Average Accuracy: {}".format(average_acc_train, average_acc_test))
+    print("SVM Linear Verification Accuracy: {} \nSVM Linear Test Accuracy: {}".format(acc_train, acc_test))
 
 
     

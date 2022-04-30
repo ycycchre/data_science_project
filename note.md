@@ -36,6 +36,7 @@ g# Group Name: stress forever
     - 4/14 21:30-00:00 midterm report and presentation practice
     - 4/29 10:00-11:50 correlation coefficient and part of SVM
     - 4/29 19:00-01:10 SVM, Decision Tree, Transfer all code to python
+    - 4/30 21:30-11:30 modified the code and discuss what to do next
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
@@ -46,6 +47,19 @@ g# Group Name: stress forever
     - 需要找放鬆活動的排行資料，可以是資料形式或是相關研究結果，資料較佳，可做分析
     - 整理台灣一年度溫濕度資料(2021, 2020, 2019)
     - 做預測介面(python GUI)
+
+# Weather Data
+### 2021
+    - Humidity []
+    - Temperature []
+
+### 2020
+    - Humidity []
+    - Temperature []
+
+### 2019
+    - Humidity []
+    - Temperature []
 
 ![UI_prototype](./UI_prototype.jpeg)
     
