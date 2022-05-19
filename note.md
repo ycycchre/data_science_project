@@ -37,16 +37,28 @@ g# Group Name: stress forever
     - 4/29 10:00-11:50 correlation coefficient and part of SVM
     - 4/29 19:00-01:10 SVM, Decision Tree, Transfer all code to python
     - 4/30 21:30-11:30 modified the code and discuss what to do next
+    - 5/19 21:00-23:30 GUI_try to present title, label and entry
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
     - 濕度越高壓力越大
     - 壓力越大走路步數越多 (步數多無法推論可抒壓)
 
-# next time
+# 5/19 summary
     - 需要找放鬆活動的排行資料，可以是資料形式或是相關研究結果，資料較佳，可做分析
+        - https://www.bbc.co.uk/programmes/articles/5GF8npkXxpp4z0KBqGx2pl7/the-ten-most-restful-activities
     - 整理台灣一年度溫濕度資料(2021, 2020, 2019)
+        - [臺灣地區平均氣溫、濕度] https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100&funid=a8101
+
+
+# next time
     - 做預測介面(python GUI)
+        - 下拉式選單
+        - 按鈕
+        - 預測結果(gird)
+        - 台灣近3年(2019-2021)天氣vs壓力分析結果
+        - 推薦的放鬆活動排行榜
+
 
 # Weather Data
 ### 2021
