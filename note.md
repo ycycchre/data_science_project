@@ -53,11 +53,9 @@ g# Group Name: stress forever
 
 # next time
     - 做預測介面(python GUI)
-        - 下拉式選單
-        - 按鈕
-        - 預測結果(gird)
         - 台灣近3年(2019-2021)天氣vs壓力分析結果
         - 推薦的放鬆活動排行榜
+        - warning 用額外的視窗顯示
 
 
 # Weather Data
