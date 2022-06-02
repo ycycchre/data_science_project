@@ -5,6 +5,8 @@ import tkinter as tk
 import tkinter.ttk as ttk
 import tkinter.font as tkFont
 from classifier_model import ClassifierModel
+from pandastable import Table, TableModel
+
 # from sklearn.metrics import accuracy_score
 
 # # 自訂函數
@@ -12,7 +14,41 @@ from classifier_model import ClassifierModel
 #     window = tk.Tk()
 #     window.title('Test')
 
+def taipei_pred():
+
+    mon_data = ["110年1月", "110年2月","110年3月","110年4月","110年5月","110年6月","110年7月","110年8月","110年9月","110年10月","110年11月","110年12月","109年1月", "109年2月","109年3月","109年4月","109年5月","109年6月","109年7月","109年8月","109年9月","109年10月","109年11月","109年12月", "108年1月", "108年2月","108年3月","108年4月","108年5月","108年6月","108年7月","108年8月","108年9月","108年10月","108年11月","108年12月"]
+
+    humi_data = [75,74,83,77,74,74,72,79,72,76,78,77,75,72,75,73,77,68,67,70,73,77,76,88,74,79,75,76,77,77,73,72,79,74,75,77]
+    temp_data = [60.8,66.38,68.54,72.32,82.76,84.74,86.54,84.02,85.1,78.26,70.16,64.94,64.22,65.66,69.44,69.62,80.42,86.9,87.62,86.36,82.04,76.1,73.94,64.58,65.3,65.84,67.64,75.56,77,83.3,86.54,86.9,81.14,77.54,71.6,66.38]
+
+    data = {'Humidity': humi_data, 'Temperature': temp_data}
+    test_data = pd.DataFrame(data)
+
+    class_model = ClassifierModel()
+
+    predict_val = class_model.knn_prediction(test_data)
+
+    show_data = {'Month': mon_data, 'Humidity': humi_data, 'Temperature': temp_data, 'Predict Stress Level':predict_val}
+    show_data_frame = pd.DataFrame(show_data)
+
+    weather_result = tk.Tk()
+    weather_result.title('Taipei Weather Predict')
+
+    frame = tk.Frame(weather_result)
+    # frame.pack(fill='both', expand=True)
+
+    pt = Table(frame)
+    pt.model.df = show_data_frame
+
+    pt.show()
+
+    # weather_result.mainloop()
+
+    
+
+
 def predict_result():
+    humidity_data = []
     data = {'Humidity': [float(entry_humi.get())], 'Temperature': [float(entry_temp.get())]}
 
     test_data = pd.DataFrame(data)
@@ -60,8 +96,8 @@ if __name__ == "__main__":
     title.grid(row = 1, column = 0, columnspan = 7)
     
     # this will create a label widget
-    label_temp = tk.Label(window, text = "Temperature:", font=("Times New Roman", 18))
-    label_humi = tk.Label(window, text = "Humidity:   ", font=("Times New Roman", 18)) 
+    label_temp = tk.Label(window, text = "Temperature(◦F):", font=("Times New Roman", 18))
+    label_humi = tk.Label(window, text = "Humidity(RH%):   ", font=("Times New Roman", 18)) 
     label_mod = tk.Label(window, text = "Choose Model:   ", font=("Times New Roman", 18)) 
     
     
@@ -71,6 +107,13 @@ if __name__ == "__main__":
                     command = predict_result, # 按下按鈕所執行的函數
                     font=("Times New Roman", 18)) 
 
+    label_taiwan_pred = tk.Label(window, text = "Taiwan Weather Prediction 108-110:", font=("Times New Roman", 18)) 
+
+    taipei_predict_button = tk.Button(window,   # 按鈕所在視窗
+                    text = 'Taipei',  # 顯示文字
+                    command = taipei_pred, # 按下按鈕所執行的函數
+                    font=("Times New Roman", 18))
+
 
     # grid method to arrange labels in respective 
     # rows and columns as specified
@@ -78,6 +121,8 @@ if __name__ == "__main__":
     label_humi.grid(row = 3, column = 1, sticky=tk.E)
     label_mod.grid(row = 4, column = 1, sticky=tk.E)
     predict_button.grid(row = 5, column = 1, columnspan = 2)
+
+    taipei_predict_button.grid(row = 7, column = 1, columnspan = 2)
 
     # entry widgets, used to take entry from user 
     entry_temp = tk.Entry(window, width = 20)
