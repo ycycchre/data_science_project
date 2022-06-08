@@ -1,11 +1,12 @@
 # 引入 tkinter 模組
-from email import message
 import pandas as pd
 import tkinter as tk
 import tkinter.ttk as ttk
 import tkinter.font as tkFont
+import run_model_accuracy as acc_result
 from classifier_model import ClassifierModel
-from pandastable import Table, TableModel
+from linear import LinearAnaiysis
+from pandastable import Table
 
 # from sklearn.metrics import accuracy_score
 
@@ -13,6 +14,34 @@ from pandastable import Table, TableModel
 # def hello():
 #     window = tk.Tk()
 #     window.title('Test')
+
+def show_model_accuracy():
+    classifier_model = ClassifierModel()
+
+    acc_result_window = tk.Tk()
+    acc_result_window.title('Model Accuracy')
+
+    result_list = [acc_result.knn(classifier_model),  acc_result.decision_tree(classifier_model), acc_result.adaboost(classifier_model), acc_result.svm(classifier_model), acc_result.svm_rbf(classifier_model), acc_result.svm_poly(classifier_model), acc_result.svm_linear(classifier_model)]
+
+    acc_string = ""
+
+    for acc in result_list:
+        acc_string += acc
+        acc_string += "\n\n"
+
+    size = len(acc_string)
+    acc_string = acc_string[:size-2]
+
+    acc_result_label = tk.Label(acc_result_window, text = acc_string, font=("Times New Roman", 18),  justify=tk.LEFT)
+    acc_result_label.grid(sticky = tk.W)
+    
+
+def show_linear_analysis():
+    linear_analysis = LinearAnaiysis()
+
+    linear_analysis.linear_with_correlation_all()
+    linear_analysis.linear_show_with_stress_level_all()
+    
 
 def taipei_pred():
 
@@ -173,38 +202,58 @@ def hualien_pred():
 
     pt.show()
 
+def show_resful_activities():
+    tk.messagebox.showinfo('The Ten Most Restful Activities', '1. Reading\n2. Being in the natural environment\n3. Being on your own\n4. Listening to music\n5. Doing nothing in particular\n6. Walking\n7. Having a bath or shower\n8. Daydreaming\n9. Watching TV\n10. Meditating or practising mindfulness')
+
 def predict_result():
-    humidity_data = []
-    data = {'Humidity': [float(entry_humi.get())], 'Temperature': [float(entry_temp.get())]}
+    humi = None
+    temp = None
+    try:
+        humi = float(entry_humi.get())
+    except:
+        tk.messagebox.showerror(title=None, message="Invlid Humidity Data.")
+        return 0
+
+    try:
+        temp = float(entry_temp.get())
+    except:
+        tk.messagebox.showerror(title=None, message="Invlid Temperature Data.")
+        return 0
+
+    data = {'Humidity': [humi], 'Temperature': [temp]}
 
     test_data = pd.DataFrame(data)
     model = combo_mod.get()
     class_model = ClassifierModel()
     predict_val = -1
 
-    if (model == "K-NN"):
-        predict_val = class_model.knn_prediction(test_data)[0]
-    elif (model == "Decision Tree"):
-        predict_val = class_model.decision_tree_prediction(test_data)[0]
-    elif (model == "Adaboost"):
-        predict_val = class_model.adaboost_prediction(test_data)[0]
-    elif (model == "SVM"):
-        predict_val = class_model.svc_prediction(test_data)[0]
-    elif (model == "SVM Poly"):
-        predict_val = class_model.poly_svc_prediction(test_data)[0]
-    elif (model == "SVM RBF"):
-        predict_val = class_model.rbf_svc_prediction(test_data)[0]
-    elif (model == "SVM Linear"):
-        predict_val = class_model.lin_svc_prediction(test_data)[0]
-    else:
-        # message = tk.Tk()
-        # message.title('Warning')
-        # label_warning_message = 
-        print("Please choose a predict model.")
+    try:
+        if (model == "K-NN"):
+            predict_val = class_model.knn_prediction(test_data)[0]
+        elif (model == "Decision Tree"):
+            predict_val = class_model.decision_tree_prediction(test_data)[0]
+        elif (model == "Adaboost"):
+            predict_val = class_model.adaboost_prediction(test_data)[0]
+        elif (model == "SVM"):
+            predict_val = class_model.svc_prediction(test_data)[0]
+        elif (model == "SVM Poly"):
+            predict_val = class_model.poly_svc_prediction(test_data)[0]
+        elif (model == "SVM RBF"):
+            predict_val = class_model.rbf_svc_prediction(test_data)[0]
+        elif (model == "SVM Linear"):
+            predict_val = class_model.lin_svc_prediction(test_data)[0]
+        else:
+            tk.messagebox.showerror(title=None, message="Please choose a predict model.")
+            return 0
+    except: 
+        tk.messagebox.showerror(title=None, message="Please enter valid data")
+        return 0
 
     res_val.config(text = str(predict_val))
+
+    if predict_val == 2:
+        show_resful_activities()
        
-    # print("Hello, {}.".format(predict_val))
 
 if __name__ == "__main__":
 
@@ -264,7 +313,6 @@ if __name__ == "__main__":
     label_res.grid(row = 2, column = 3, sticky=tk.W)
     res_val.grid(row = 3, column = 3, rowspan = 3)
 
-
     label_taiwan_pred = tk.Label(window, text = "Taiwan Weather Prediction 108-110:",
                                  font=("Times New Roman", 18, "bold")) 
     taipei_predict_button = tk.Button(window,   # 按鈕所在視窗
@@ -300,9 +348,33 @@ if __name__ == "__main__":
     taichung_predict_button.grid(row = 8, column = 2)
     hualien_predict_button.grid(row = 8, column = 3)
 
-    # # 輸入欄位
-    # entry = tk.Entry(window,     # 輸入欄位所在視窗
-    #                 width = 20) # 輸入欄位的寬度
+    label_source_analysis = tk.Label(window, text = "Source analysis: ",
+                                 font=("Times New Roman", 18, "bold"))
 
-    # 執行主程式
+    linear_analysis_button = tk.Button(window,   # 按鈕所在視窗
+                    text = 'Linear analysis',  # 顯示文字
+                    command = show_linear_analysis, # 按下按鈕所執行的函數
+                    font=("Times New Roman", 18))
+
+    model_accuaracy_button = tk.Button(window,   # 按鈕所在視窗
+                    text = 'Model Accuracy',  # 顯示文字
+                    command = show_model_accuracy, # 按下按鈕所執行的函數
+                    font=("Times New Roman", 18))
+
+
+    label_source_analysis.grid(row = 9, column = 1, sticky=tk.W)
+    linear_analysis_button.grid(row = 10, column = 1)
+    model_accuaracy_button.grid(row = 10, column = 2)
+
+    label_reful_activities = tk.Label(window, text = "The Ten Most Resful Activities: ",
+                                 font=("Times New Roman", 18, "bold"))
+
+    show_resful_activities_button = tk.Button(window,   # 按鈕所在視窗
+                    text = 'Resful Activities',  # 顯示文字
+                    command = show_resful_activities, # 按下按鈕所執行的函數
+                    font=("Times New Roman", 18)) 
+
+    label_reful_activities.grid(row = 11, column = 1, columnspan = 3, sticky=tk.W)
+    show_resful_activities_button.grid(row = 12, column = 1, columnspan = 2)
+
     window.mainloop()

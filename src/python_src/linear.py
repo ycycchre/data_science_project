@@ -54,7 +54,7 @@ class LinearAnaiysis:
             linear_data_y = self.get_data_by_name(self.linear_name_y[i])
             
             correlation = linear_data_x.corr(linear_data_y)
-            print("correlation coefficient between", self.linear_name_x[i], "and", self.linear_name_y[i], "is", correlation)
+            # print("correlation coefficient between", self.linear_name_x[i], "and", self.linear_name_y[i], "is", correlation)
 
             axs[plot_column, plot_row].scatter(linear_data_x, linear_data_y, alpha=0.8)
             axs[plot_column, plot_row].set(xlabel=self.linear_name_x[i], ylabel=self.linear_name_y[i])
@@ -69,6 +69,7 @@ class LinearAnaiysis:
         fig.tight_layout()
         fig.set_figheight(6)
         fig.set_figwidth(12)
+        plt.gcf().canvas.set_window_title('Linear analysis with any of two labels')
         plt.show()
 
         
@@ -164,6 +165,7 @@ class LinearAnaiysis:
         fig.tight_layout()
         fig.set_figheight(8)
         fig.set_figwidth(15)
+        plt.gcf().canvas.set_window_title('Linear analysis with stress level')
         plt.show()
 
     
