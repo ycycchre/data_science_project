@@ -259,6 +259,7 @@ if __name__ == "__main__":
 
     # 建立主視窗 Frame
     window = tk.Tk()
+    window.geometry('750x680')
 
     # 設定視窗標題
     window.title('Predict Stress Level')
@@ -267,7 +268,7 @@ if __name__ == "__main__":
     title_label_font_style = tkFont.Font(family="Times New Roman", size=24, weight="bold")
     title = tk.Label(window, text = 'Predict Stress Level by Temperature and Humidity',
                      font = title_label_font_style)
-    title.grid(row = 1, column = 0, columnspan = 7)
+    title.grid(row = 1, column = 0, columnspan = 7, padx = (25, 0), pady = (20, 5))
     
     # this will create a label widget
     label_temp = tk.Label(window, text = "Temperature(◦F):", font=("Times New Roman", 18))
@@ -280,6 +281,7 @@ if __name__ == "__main__":
                     text = 'Predict',  # 顯示文字
                     command = predict_result, # 按下按鈕所執行的函數
                     font=("Times New Roman", 18)) 
+    
 
     # grid method to arrange labels in respective 
     # rows and columns as specified
@@ -312,6 +314,8 @@ if __name__ == "__main__":
 
     label_res.grid(row = 2, column = 3, sticky=tk.W)
     res_val.grid(row = 3, column = 3, rowspan = 3)
+    
+    tk.Label(window, text="\n").grid(row = 6, column = 1, columnspan = 3)
 
     label_taiwan_pred = tk.Label(window, text = "Taiwan Weather Prediction 108-110:",
                                  font=("Times New Roman", 18, "bold")) 
@@ -340,13 +344,15 @@ if __name__ == "__main__":
                     command = hualien_pred, # 按下按鈕所執行的函數
                     font=("Times New Roman", 18))
 
-    label_taiwan_pred.grid(row = 6, column = 1, columnspan = 3, sticky=tk.W)
-    taipei_predict_button.grid(row = 7, column = 1)
-    kaohsiung_predict_button.grid(row = 7, column = 2)
-    tamsui_predict_button.grid(row = 7, column = 3)
-    hsinchu_predict_button.grid(row = 8, column = 1)
-    taichung_predict_button.grid(row = 8, column = 2)
-    hualien_predict_button.grid(row = 8, column = 3)
+    label_taiwan_pred.grid(row = 7, column = 1, columnspan = 3, sticky=tk.W, padx = (0, 0), pady = (0, 10))
+    taipei_predict_button.grid(row = 8, column = 1)
+    kaohsiung_predict_button.grid(row = 8, column = 2)
+    tamsui_predict_button.grid(row = 8, column = 3)
+    hsinchu_predict_button.grid(row = 9, column = 1)
+    taichung_predict_button.grid(row = 9, column = 2)
+    hualien_predict_button.grid(row = 9, column = 3)
+
+    tk.Label(window, text="\n").grid(row = 10, column = 1, columnspan = 3)
 
     label_source_analysis = tk.Label(window, text = "Source analysis: ",
                                  font=("Times New Roman", 18, "bold"))
@@ -362,9 +368,11 @@ if __name__ == "__main__":
                     font=("Times New Roman", 18))
 
 
-    label_source_analysis.grid(row = 9, column = 1, sticky=tk.W)
-    linear_analysis_button.grid(row = 10, column = 1)
-    model_accuaracy_button.grid(row = 10, column = 2)
+    label_source_analysis.grid(row = 11, column = 1, sticky=tk.W, padx = (0, 0), pady = (0, 10))
+    linear_analysis_button.grid(row = 12, column = 1)
+    model_accuaracy_button.grid(row = 12, column = 2)
+
+    tk.Label(window, text="\n").grid(row = 13, column = 1, columnspan = 3)
 
     label_reful_activities = tk.Label(window, text = "The Ten Most Resful Activities: ",
                                  font=("Times New Roman", 18, "bold"))
@@ -374,7 +382,7 @@ if __name__ == "__main__":
                     command = show_resful_activities, # 按下按鈕所執行的函數
                     font=("Times New Roman", 18)) 
 
-    label_reful_activities.grid(row = 11, column = 1, columnspan = 3, sticky=tk.W)
-    show_resful_activities_button.grid(row = 12, column = 1, columnspan = 2)
+    label_reful_activities.grid(row = 14, column = 1, columnspan = 3, sticky=tk.W, padx = (0, 0), pady = (0, 10))
+    show_resful_activities_button.grid(row = 15, column = 1, columnspan = 2)
 
     window.mainloop()

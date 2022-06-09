@@ -40,6 +40,8 @@ g# Group Name: stress forever
     - 5/19 21:00-23:30 GUI_try to present title, label and entry
     - 5/27 10:00-12:30 GUI_predict part done
     - 6/02 21:00-00:30 GUI_taiwan weather done
+    - 6/08 13:00-15:30 almost finish GUI
+    - 6/09 21:00-22:10 finish GUI and discuss document
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
@@ -52,10 +54,12 @@ g# Group Name: stress forever
 
 
 # next time
-    - 做預測介面(python GUI)
-        - 推薦的放鬆活動排行榜
-        - warning 用額外的視窗顯示
-        - algorithm and analysis result
+    - document
+
+# paper
+    - The Importance of Humidity in the Relationship between Heat and Population Mental Health: Evidence from Australia
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5058549/
+    - https://ikala.cloud/supervised-learning-classification-regression/
 
 
 # Weather Data
