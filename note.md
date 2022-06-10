@@ -17,6 +17,7 @@ g# Group Name: stress forever
     - [SVC model=linear vs linearSVC]https://blog.csdn.net/qq_39537898/article/details/121883511
     - [SVM model=rbf]https://ithelp.ithome.com.tw/articles/10201279
     - [AdaBoostClaasifier]https://www.796t.com/content/1549060055.html
+    - https://medium.com/jameslearningnote/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%AC%AC3-3%E8%AC%9B-%E7%B7%9A%E6%80%A7%E5%88%86%E9%A1%9E-%E9%82%8F%E8%BC%AF%E6%96%AF%E5%9B%9E%E6%AD%B8-logistic-regression-%E4%BB%8B%E7%B4%B9-a1a5f47017e5
 
 
 
