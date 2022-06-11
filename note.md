@@ -43,6 +43,7 @@ g# Group Name: stress forever
     - 6/02 21:00-00:30 GUI_taiwan weather done
     - 6/08 13:00-15:30 almost finish GUI
     - 6/09 21:00-22:10 finish GUI and discuss document
+    - 6/10 18:00-4:00 document Abstract, Introduction, Problem Statement, Conclusion 
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
