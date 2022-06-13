@@ -44,6 +44,8 @@ g# Group Name: stress forever
     - 6/08 13:00-15:30 almost finish GUI
     - 6/09 21:00-22:10 finish GUI and discuss document
     - 6/10 18:00-4:00 document Abstract, Introduction, Problem Statement, Conclusion 
+    - 6/11 20:00-4:00 document Proposed Models
+    - 6/12 12:50-23:50 document appendix, reference, literature review and related works, experiments, demo video, README file
 
 # 3/27 analyze directly plots(without using algorithm)
     - 溫度越高壓力越大
