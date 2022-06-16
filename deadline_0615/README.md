@@ -8,7 +8,7 @@
 
 ## How to run application:
 1. cd `src/python_src`
-2. ```python gui.py```(may need to install packages)
+2. ```python gui.py``` (may need to install packages)
 
 ### install package list
 - ``` pip install pandas```
